@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	 <definition name="main_admin" template="/WEB-INF/jsp/layout_admin/main_page.jsp">
+	   	<put-attribute name="header" value="/WEB-INF/jsp/layout_admin/header.jsp" />
+		<put-attribute name="css_import" value="/WEB-INF/jsp/layout_admin/css_import.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="sidebar" value="/WEB-INF/jsp/layout_admin/sidebar.jsp" />
+	    <put-attribute name="footer" value="/WEB-INF/jsp/layout_admin/footer.jsp" />
+		<put-attribute name="js_import" value="/WEB-INF/jsp/layout_admin/js_import.jsp" />
+	  
+	</definition>
+	
+	<definition name="login_admin" template="WEB-INF/jsp/login.jsp">
+	   <put-attribute name="css" value="/WEB-INF/jsp/layout_admin/css_import.jsp" />
+	</definition>
+
+	<definition name="dashboard" extends="main_admin">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/dashboard.jsp" />
+	</definition>
+	
+
+</tiles-definitions>
