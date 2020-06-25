@@ -1,13 +1,12 @@
- <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
     <!-- Header top area start-->
     <div class="wrapper-pro">
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img src="img/message/1.jpg" alt="" />
+                    <a href="#"><img src="${pageContext.request.contextPath}/admin/img/message/1.jpg" alt="" />
                     </a>
                     <h3>Andrar Son</h3>
                     <p>Developer</p>
@@ -17,31 +16,25 @@
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
                         <li class="nav-item">
                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">Home</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
-                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="dashboard.html" class="dropdown-item">Dashboard v.1</a>
-                                <a href="dashboard-2.html" class="dropdown-item">Dashboard v.2</a>
-                                <a href="analytics.html" class="dropdown-item">Analytics</a>
-                                <a href="widgets.html" class="dropdown-item">Widgets</a>
-                            </div>
+                           </li>
+                        <li class="nav-item">
+                        	<a href="<c:url value='/admin/product' />" data-toggle="" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                        		<i class="fa big-icon fa-envelope"></i> 
+                        			<span class="mini-dn">Product</span> 
+                        			<span class="indicator-right-menu mini-dn">
+                        		</span>
+                        	</a>
+                            
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Mailbox</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
-                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="inbox.html" class="dropdown-item">Inbox</a>
-                                <a href="view-mail.html" class="dropdown-item">View Mail</a>
-                                <a href="compose-mail.html" class="dropdown-item">Compose Mail</a>
-                            </div>
-                        </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-flask"></i> <span class="mini-dn">Interface</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
-                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="google-map.html" class="dropdown-item">Google Map</a>
-                                <a href="data-maps.html" class="dropdown-item">Data Maps</a>
-                                <a href="pdf-viewer.html" class="dropdown-item">Pdf Viewer</a>
-                                <a href="x-editable.html" class="dropdown-item">X-Editable</a>
-                                <a href="code-editor.html" class="dropdown-item">Code Editor</a>
-                                <a href="tree-view.html" class="dropdown-item">Tree View</a>
-                                <a href="preloader.html" class="dropdown-item">Preloader</a>
-                                <a href="images-cropper.html" class="dropdown-item">Images Cropper</a>
-                            </div>
+                        <li class="nav-item">
+                        	<a href="#" data-toggle="" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                        		<i class="fa big-icon fa-flask"></i> 
+                        		<span class="mini-dn">Jenis Product</span>
+                        	 	<span class="indicator-right-menu mini-dn">
+                        	 	<i class="fa indicator-mn fa-angle-left"></i>
+                        	 	</span>
+                        	 </a>
+                            
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-pie-chart"></i> <span class="mini-dn">Miscellaneous</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
@@ -116,7 +109,7 @@
                                     <i class="fa fa-bars"></i>
                                 </button>
                                 <div class="admin-logo logo-wrap-pro">
-                                    <a href="#"><img src="img/logo/log.png" alt="" />
+                                    <a href="#"><img src="${pageContext.request.contextPath}/admin/img/logo/log.png" alt="" />
                                     </a>
                                 </div>
                             </div>
@@ -157,7 +150,7 @@
                                                     <li>
                                                         <a href="#">
                                                             <div class="message-img">
-                                                                <img src="img/message/1.jpg" alt="">
+                                                                <img src="${pageContext.request.contextPath}/admin/img/message/1.jpg" alt="">
                                                             </div>
                                                             <div class="message-content">
                                                                 <span class="message-date">16 Sept</span>

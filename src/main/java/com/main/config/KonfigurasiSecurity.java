@@ -40,7 +40,7 @@ protected void configure(HttpSecurity http) throws Exception{
 		.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
 		.and()
          .authorizeRequests()
-         .antMatchers("*/css/**","*/js/**").permitAll()
+         .antMatchers("*/css/**","*/js/**","*/img/**","*/png/**").permitAll()
          .anyRequest().authenticated()
          .and()
          .formLogin()

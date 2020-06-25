@@ -21,5 +21,16 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/admin/dashboard.jsp" />
 	</definition>
 	
-
+	<!-- Product -->
+	<definition name="product" extends="main_admin">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/product/index.jsp" />
+	</definition>
+	
+	<definition name="edit_product" extends="main_admin">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/product/edit.jsp" />
+	</definition>
+	
+	<!-- Product -->
+	
+	
 </tiles-definitions>

@@ -48,7 +48,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Product <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="demo" class="collapse dropdown-header-top">
                                                 <li><a href="inbox.html">Inbox</a>
                                                 </li>
@@ -58,7 +58,8 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <li>
+                                        <a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">
                                                 <li><a href="profile.html">Profile</a>
                                                 </li>

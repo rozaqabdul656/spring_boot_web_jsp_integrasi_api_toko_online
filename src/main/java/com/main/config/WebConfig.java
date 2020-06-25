@@ -15,11 +15,13 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
     	   registry.addResourceHandler("/admin/**/*").addResourceLocations("classpath:/static/");
-    	   
+    	   registry.addResourceHandler("/img/*").addResourceLocations("/ui/img/");
+//    	     registry.addResourceHandler("/*.css/**").addResourceLocations("/ui/img/");
+    	     
     }
     @Override
     public void addViewControllers(ViewControllerRegistry registry){
 //        registry.addViewController("/login").setViewName("login");
     }
-    
+    	
 }
