@@ -63,7 +63,8 @@ public class JenisProduct  {
 //		String result = String.format("JenisProduct[id = %d,nama_jenis_product='%s']%n",
 //				jenis_product,nama_jenis_product);
 //		
-		String result = String.format("JenisProduct[id = %d,name='%s']%n",jenis_product,nama_jenis_product);
+//		String result = String.format("JenisProduct[id = %d,name='%s']%n",jenis_product,nama_jenis_product);
+		String result = String.format("%d%n",jenis_product);
 		
 //				String.format("%s",nama_jenis_product);
 		

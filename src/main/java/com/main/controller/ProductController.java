@@ -57,12 +57,24 @@ public class ProductController {
        return mav;
    }
 	
-	@RequestMapping(value = "/admin/update_product/{id}")
-	public String update(@PathVariable(value="id") Long id, Product ProductModel,HttpServletRequest request,@RequestParam("file") MultipartFile file) throws IOException{
+	@RequestMapping("/admin/add_product")
+	 public ModelAndView add(ModelAndView mav, HttpServletRequest request, HttpServletResponse resp,RedirectAttributes ra){
+		mav.addObject("DataJenisProduct", JpImp.getAllProduct());
+	  mav.setViewName("add_product");
+	  
+      return mav;
+  }
+	@RequestMapping("/admin/add_aksi_product")
+	 public String add_aksi( Product ProductModel,HttpServletRequest request,@RequestParam("file") MultipartFile file) throws IOException{
 		String filename=PrImp.storeFile(file);
-
-		Product PrUpdated = PrImp.getFindOne(id);
-		PrUpdated.setId_product(id);
+		
+//		ProductModel.setGambar_product(filename);
+//		JenisProduct Jp=new JenisProduct();
+//		Jp.setProducts(ProductModel.getJenisProduct());
+//		ProductModel.setJenisProduct(Jp);
+//		PrImp.insertProduct(ProductModel);
+//		
+		Product PrUpdated=new Product();
 		PrUpdated.setNama_product(ProductModel.getNama_product());
 		PrUpdated.setBerat(ProductModel.getBerat());
 		PrUpdated.setHarga(ProductModel.getHarga());
@@ -71,17 +83,53 @@ public class ProductController {
 		PrUpdated.setJenisProduct(Jp);
 		ProductModel.setGambar_product(filename);
 		PrUpdated.setGambar_product(ProductModel.getGambar_product());
+	
 		
-//		String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-//                .path("/static/gambar_product/")
-//                .toUriString();
-//		
+//		String filename=PrImp.storeFile(file);
+		PrImp.insertProduct(PrUpdated);
+		
+		
 		if(file != null ){
+			file.transferTo(new File(request.getSession().getServletContext().getRealPath("ui")+"/img/"+file.getOriginalFilename()));
+		}
+		
+		return "redirect:/admin/product";
+//	 return ProductModel.getNama_product();
+ }
+	
+	
+	@RequestMapping(value = "/admin/update_product/{id}")
+	public String update(@PathVariable(value="id") Long id, Product ProductModel,HttpServletRequest request,@RequestParam("file") MultipartFile file) throws IOException{
+		
+	
+		Product PrUpdated = PrImp.getFindOne(id);
+		PrUpdated.setId_product(id);
+		PrUpdated.setNama_product(ProductModel.getNama_product());
+		PrUpdated.setBerat(ProductModel.getBerat());
+		PrUpdated.setHarga(ProductModel.getHarga());
+		JenisProduct Jp=new JenisProduct();
+		Jp.setProducts(ProductModel.getJenisProduct());
+		PrUpdated.setJenisProduct(Jp);
+		String filename=PrImp.storeFile(file);
+		
+		if(filename!=null) {
+			ProductModel.setGambar_product(filename);
+			
+		}
+		PrUpdated.setGambar_product(ProductModel.getGambar_product());
+		
+		if(filename != null ){
 			file.transferTo(new File(request.getSession().getServletContext().getRealPath("ui")+"/img/"+file.getOriginalFilename()));
 		}
 		
 		Product ProductModelInp=PrImp.updateProduct(PrUpdated);
 		
+		return "redirect:/admin/product";
+  }
+	
+	@RequestMapping(value = "/admin/delete_product/{id}")
+	public String delete(@PathVariable(value="id") Long id,HttpServletRequest request){
+		PrImp.delete(id);
 		return "redirect:/admin/product";
   }
 	

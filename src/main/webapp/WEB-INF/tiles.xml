@@ -30,6 +30,10 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/admin/product/edit.jsp" />
 	</definition>
 	
+	<definition name="add_product" extends="main_admin">
+		<put-attribute name="body" value="/WEB-INF/jsp/admin/product/add.jsp" />
+	</definition>
+	
 	<!-- Product -->
 	
 	

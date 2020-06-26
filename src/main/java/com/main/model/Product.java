@@ -21,6 +21,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @EntityListeners(AuditingEntityListener.class)
 public class Product  {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	
 	private long id_product;
 	
 	private String nama_product;

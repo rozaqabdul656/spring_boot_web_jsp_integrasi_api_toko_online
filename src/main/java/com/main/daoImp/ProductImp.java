@@ -21,10 +21,6 @@ public class ProductImp implements DaoProduct {
 	@Autowired
 	RepositoryProduct Rp ;
 	
-	
-	
-
-
 	@Override
 	public List<Product> getAllProduct() {
 		
@@ -74,8 +70,8 @@ public class ProductImp implements DaoProduct {
 
 	@Override
 	public Product insertProduct(Product Pr) {
-		// TODO Auto-generated method stub
-		return null;
+		return Rp.save(Pr);
+		
 	}
 
 	@Override
@@ -106,6 +102,10 @@ public class ProductImp implements DaoProduct {
 ////            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
 //        }
     }
+
+	public void delete(Long id) {
+		Rp.delete(id);
+	}
 
 
 }
