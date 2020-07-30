@@ -36,9 +36,14 @@ public class KonfigurasiSecurity extends WebSecurityConfigurerAdapter{
 ///konfigurasi web mana yg boleh diakses admin staf user dll
 protected void configure(HttpSecurity http) throws Exception{
 
-	http.authorizeRequests()
-		.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-		.and()
+	http
+		 .authorizeRequests()
+		 .antMatchers("/").permitAll()
+		 .antMatchers("/front_end/**/*").permitAll()
+         .and()
+	 	 .authorizeRequests()
+		 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+		 .and()
          .authorizeRequests()
          .antMatchers("*/css/**","*/js/**","*/img/**","*/png/**").permitAll()
          .anyRequest().authenticated()
@@ -52,6 +57,7 @@ protected void configure(HttpSecurity http) throws Exception{
          .logout()
          .and()
          .csrf();
+	
 //         .addFilterAfter(new CsrfAttributeToCookieFilter(), CsrfFilter.class)
 //         .csrf().csrfTokenRepository(csrfTokenRepository());
 }

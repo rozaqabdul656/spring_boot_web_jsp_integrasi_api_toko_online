@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
@@ -21,8 +22,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @EntityListeners(AuditingEntityListener.class)
 public class Product  {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@SequenceGenerator(name="seq-gen",sequenceName="tb_product_seq", initialValue=205, allocationSize=12)
+	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator="seq-gen")
 	private long id_product;
 	
 	private String nama_product;

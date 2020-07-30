@@ -7,7 +7,11 @@ import com.main.model.JenisProduct;
 
 public interface DaoJenisProduct {
 	void insertProduct(JenisProduct Pr);
+	void updateProduct(JenisProduct Pr);
+	void deleteJenis(Long Id);
+	
+	
 	List<JenisProduct> getAllProduct();
-	List<JenisProduct> getDetailAllProduct(int id);
+	JenisProduct getDetailAllProduct(long id);
 	
 }

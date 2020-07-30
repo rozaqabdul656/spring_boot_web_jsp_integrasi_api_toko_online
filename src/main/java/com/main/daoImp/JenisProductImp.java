@@ -18,8 +18,7 @@ public class JenisProductImp implements DaoJenisProduct {
 	
 	@Override
 	public void insertProduct(JenisProduct Pr) {
-		// TODO Auto-generated method stub
-		
+		Rjp.save(Pr);
 	}
 
 	@Override
@@ -29,9 +28,20 @@ public class JenisProductImp implements DaoJenisProduct {
 	}
 
 	@Override
-	public List<JenisProduct> getDetailAllProduct(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public JenisProduct getDetailAllProduct(long id) {
+	 return Rjp.findOne(id);
+	}
+
+	@Override
+	public void updateProduct(JenisProduct Pr) {
+		Rjp.save(Pr);
+		
+	}
+
+	@Override
+	public void deleteJenis(Long Id) {
+		Rjp.delete(Id);
+		
 	}
 
 }

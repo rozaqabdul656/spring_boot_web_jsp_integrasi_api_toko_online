@@ -1,27 +1,41 @@
 package com.main.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
 @Table(name="tb_jenis_product")
 public class JenisProduct  {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long jenis_product;
+	@Column(name = "jenis_product")
+	@SequenceGenerator(name="seq-gen_jenis",sequenceName="tb_jenis_product_seq", initialValue=205, allocationSize=12)
+	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator="seq-gen_jenis")
+	private Long jenis_product=(long) 0;
+	
 	
 	private String nama_jenis_product;
+
+	public JenisProduct() {
 	
-//	private Set<Product> Products;
-	
-	
+	}
+
+	public void setJenis_product(Long jenis_product) {
+		this.jenis_product = jenis_product;
+	}
+
 	public long getJenis_product() {
 		return jenis_product;
 	}
@@ -30,16 +44,6 @@ public class JenisProduct  {
 		this.jenis_product = jenis_product;
 	}
 	
-	public JenisProduct() {
-	
-	}
-
-
-	
-	public void setJenis_product(long jenis_product) {
-		this.jenis_product = jenis_product;
-	}
-
 	public String getNama_jenis_product() {
 		return nama_jenis_product;
 	}
@@ -48,16 +52,15 @@ public class JenisProduct  {
 		this.nama_jenis_product = nama_jenis_product;
 	}
 	
-//	@OneToMany(mappedBy = "JenisProduct",cascade = CascadeType.ALL)
-//	public Set<Product> getProduct(){
-//		return Products;
-//	}
-//	
 	public void setProducts(JenisProduct jenis_product) {
 		this.jenis_product=jenis_product.jenis_product;
 		
 	}
+
 	
+
+	
+
 	@Override
 	public String toString() {
 //		String result = String.format("JenisProduct[id = %d,nama_jenis_product='%s']%n",

@@ -16,10 +16,10 @@ public interface RepositoryProduct extends JpaRepository <Product, Long>{
 	@Query(value = "SELECT * FROM tb_jenis_product WHERE jenis_product=:jenis_p", nativeQuery=true)
 	JenisProduct setjenis_Product(@Param("jenis_p") int id);
 	
-    @Query(value = "select a.*,b.* from tb_product as  a JOIN tb_jenis_product as b where a.jenis_product = b.jenis_product", nativeQuery=true)
+    @Query(value = "select a.*,b.* from tb_product a JOIN tb_jenis_product b ON a.jenis_product = b.jenis_product", nativeQuery=true)
     public List<Product> getProductAll();
 
-    @Query(value = "select a.*,b.* from tb_product as  a JOIN tb_jenis_product as b where a.jenis_product = b.jenis_product and a.id_product=:id", nativeQuery=true)
+    @Query(value = "select a.*,b.* from tb_product as  a JOIN tb_jenis_product as b ON a.jenis_product = b.jenis_product where a.id_product=:id", nativeQuery=true)
     public List<Product> getProductDetailAll(@Param("id") int id);
 
     

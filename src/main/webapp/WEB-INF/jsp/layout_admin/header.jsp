@@ -27,12 +27,9 @@
                             
                         </li>
                         <li class="nav-item">
-                        	<a href="#" data-toggle="" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                        	<a href="<c:url value='/admin/jenis_product'/>" class="nav-link dropdown-toggle">
                         		<i class="fa big-icon fa-flask"></i> 
                         		<span class="mini-dn">Jenis Product</span>
-                        	 	<span class="indicator-right-menu mini-dn">
-                        	 	<i class="fa indicator-mn fa-angle-left"></i>
-                        	 	</span>
                         	 </a>
                             
                         </li>

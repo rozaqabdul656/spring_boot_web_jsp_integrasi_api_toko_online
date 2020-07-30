@@ -66,14 +66,9 @@ public class ProductController {
   }
 	@RequestMapping("/admin/add_aksi_product")
 	 public String add_aksi( Product ProductModel,HttpServletRequest request,@RequestParam("file") MultipartFile file) throws IOException{
+		
 		String filename=PrImp.storeFile(file);
 		
-//		ProductModel.setGambar_product(filename);
-//		JenisProduct Jp=new JenisProduct();
-//		Jp.setProducts(ProductModel.getJenisProduct());
-//		ProductModel.setJenisProduct(Jp);
-//		PrImp.insertProduct(ProductModel);
-//		
 		Product PrUpdated=new Product();
 		PrUpdated.setNama_product(ProductModel.getNama_product());
 		PrUpdated.setBerat(ProductModel.getBerat());
